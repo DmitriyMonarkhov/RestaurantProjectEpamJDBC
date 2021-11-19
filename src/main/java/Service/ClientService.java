@@ -1,7 +1,9 @@
 package Service;
 
-import DAO.ClientDAO;
+import DAO.Classes.ClientDAO;
 import entity.Client;
+
+import java.util.List;
 
 public class ClientService {
 
@@ -16,11 +18,30 @@ public class ClientService {
     public static void delete (int id) {
         clientDAO.delete(id);
     }
-    public static void getAll () {
-        clientDAO.getAll();
-    }
-    public static void getAllbyNameAsc () {clientDAO.getAllbyNameAsc();}
-    public static void getAllbyNameDesc () {clientDAO.getAllbyNameDesc();}
-    public static void getClientById (int id) {clientDAO.getClientById(id);}
+    public static List<Client> getAll() {
+        List<Client> list = clientDAO.getAll();
+        System.out.println("\n Client clients from database: ");
+        list.forEach(System.out::println);
+        return list;}
 
+    public static List<Client> getAllbyNameAsc() {
+        List<Client> list = clientDAO.getAllbyNameAsc();
+        System.out.println("\n Clients from database ordering by ASC: ");
+        list.forEach(System.out::println);
+        return list;}
+
+    public static List<Client> getAllbyNameDesc () {
+        List<Client> list = clientDAO.getAllbyNameDesc();
+        System.out.println("\n Clients from database ordering by ASC: ");
+        list.forEach(System.out::println);
+        return list;}
+
+    public static Client getClientById (int id) {
+        Client client = clientDAO.getClientById(id);
+        System.out.println(client);
+        return client;
+    }
+    public static Integer getLastID(){
+        return clientDAO.getLastID();
+    }
 }

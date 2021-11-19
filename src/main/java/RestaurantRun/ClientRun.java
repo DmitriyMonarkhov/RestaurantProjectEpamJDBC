@@ -1,4 +1,4 @@
-package Restaurant_run;
+package RestaurantRun;
 
 import Service.ClientService;
 import Service.MenuService;
@@ -8,10 +8,9 @@ import entity.Order;
 
 import java.util.Scanner;
 
-public class Client_run {
-    static int id_client;
+public class ClientRun {
     static int choice;
-    static int create_order = 0;
+    static boolean create_order;
 
     public static void clientRun() {
         Scanner scanner = new Scanner(System.in);
@@ -23,12 +22,13 @@ public class Client_run {
         System.out.println("Please enter your mobile phone");
         phone = scanner.nextLine();
         Client client = new Client(name, phone);
-        id_client = ClientService.create(client);
+        ClientService.create(client);
         makeOrder();
     }
 
     public static void makeOrder() {
         try {
+            int id_client = ClientService.getLastID();
             MenuService.getAll();
             System.out.println("\n* Please choose the position from menu *");
             Scanner scanner = new Scanner(System.in);
@@ -38,7 +38,7 @@ public class Client_run {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            if (create_order > 0) {
+            if (create_order = true) {
                 System.out.println("Do you want order one more dish?\nYes - press - 1 \nNo - press - 2");
                 Scanner scanner = new Scanner(System.in);
                 choice = scanner.nextInt();

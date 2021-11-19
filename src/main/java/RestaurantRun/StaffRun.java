@@ -1,4 +1,4 @@
-package Restaurant_run;
+package RestaurantRun;
 
 import Service.ClientService;
 import Service.MenuService;
@@ -8,7 +8,7 @@ import entity.Menu;
 
 import java.util.Scanner;
 
-public class Staff_run {
+public class StaffRun {
 
     public static void stuffCheck() {
         System.out.println("Please input the password");
@@ -28,11 +28,11 @@ public class Staff_run {
             while (true) {
                 System.out.println("Choose necessary operation");
                 System.out.println("Menu: \n 1. Create new dish \n 2. Edit dish \n 3. Delete a dish \n " +
-                        "4. Get all active dish \n 5. Most expensive dish \n 6. Cheapest dish \n " +
-                        "7. Get all list of dishes sort by in sequence \n 8. Get all list of dishes sort by in descending order \n " +
-                        "9. Get dish by id \n Clients: \n 10. Update client information \n 11. Delete client \n " +
-                        "12. Get all clients sort by in sequence \n 13. Get all clients sort by in descending order \n " +
-                        "14. Get client by id \n 15. Orders info \n 16. Exit from app");
+                        "4. Get all active dish \n 5. Most expensive dish  \n 6. Get all list of dishes sort by in sequence \n " +
+                        "7. Get all list of dishes sort by in descending order \n " +
+                        "8. Get dish by id \n Clients: \n 9. Update client information \n 10. Delete client \n " +
+                        "11. Get all clients sort by in sequence \n 12. Get all clients sort by in descending order \n " +
+                        "13. Get client by id \n 14. Orders info \n 15. Orders with price \n 16. Exit from app");
 
                 Scanner scanner = new Scanner(System.in);
                 String choice = scanner.nextLine();
@@ -75,21 +75,18 @@ public class Staff_run {
                         MenuService.getMostExpensiveMenuItem();
                         break;
                     case ("6"):
-                        MenuService.getCheapestMenuItem();
-                        break;
-                    case ("7"):
                         MenuService.getAllMenuItemsOrderByNameAsc();
                         break;
-                    case ("8"):
+                    case ("7"):
                         MenuService.getAllMenuItemsOrderByNameDesc();
                         break;
-                    case ("9"): {
+                    case ("8"): {
                         System.out.println("Input id");
                         int id = scanner.nextInt();
                         MenuService.getById(id);
                         break;
                     }
-                    case ("10"): {
+                    case ("9"): {
                         System.out.println("Input the name of client");
                         String name = scanner.nextLine();
                         System.out.println("Input the phone number");
@@ -100,26 +97,30 @@ public class Staff_run {
                         ClientService.update(id, client);
                         break;
                     }
-                    case ("11"): {
+                    case ("10"): {
                         System.out.println("Input id");
                         int id = scanner.nextInt();
                         ClientService.delete(id);
                         break;
                     }
-                    case ("12"):
+                    case ("11"):
                         ClientService.getAllbyNameAsc();
                         break;
-                    case ("13"):
+                    case ("12"):
                         ClientService.getAllbyNameDesc();
                         break;
-                    case ("14"): {
+                    case ("13"): {
                         System.out.println("Input id");
                         int id = scanner.nextInt();
                         ClientService.getClientById(id);
                         break;
                     }
-                    case ("15"): {
+                    case ("14"): {
                         OrderService.getOrders();
+                        break;
+                    }
+                    case ("15"): {
+                        OrderService.getAllOrderWithCostByCost();
                         break;
                     }
                     case ("16"):
