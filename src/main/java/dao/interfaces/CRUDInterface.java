@@ -1,8 +1,8 @@
-package DAO.Interface;
+package dao.interfaces;
 
 import java.util.List;
 
-public interface CRUD_Interface <T> {
+public interface CRUDInterface<T> {
 
     int create(T t);
     List <T> getAll();

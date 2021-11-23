@@ -1,6 +1,6 @@
-package Service;
+package service;
 
-import DAO.Classes.ClientDAO;
+import dao.classes.ClientDAO;
 import entity.Client;
 
 import java.util.List;

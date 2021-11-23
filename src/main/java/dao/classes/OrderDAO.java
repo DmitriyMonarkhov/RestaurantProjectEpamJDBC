@@ -1,7 +1,7 @@
-package DAO.Classes;
+package dao.classes;
 
-import DAO.Interface.Order_Interface;
-import DataBase.DB;
+import dao.interfaces.OrderInterface;
+import dataBase.DB;
 import entity.Order;
 
 import java.sql.PreparedStatement;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class OrderDAO implements Order_Interface<Order> {
+public class OrderDAO implements OrderInterface<Order> {
     DB db = new DB();
 
     public boolean create(Order order) {

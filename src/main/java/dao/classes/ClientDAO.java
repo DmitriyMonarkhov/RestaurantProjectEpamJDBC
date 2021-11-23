@@ -1,7 +1,7 @@
-package DAO.Classes;
+package dao.classes;
 
-import DAO.Interface.Client_Interface;
-import DataBase.DB;
+import dao.interfaces.ClientInterface;
+import dataBase.DB;
 import entity.Client;
 
 
@@ -9,7 +9,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClientDAO implements Client_Interface {
+public class ClientDAO implements ClientInterface {
     DB db = new DB();
 
     public int create(Client client) {

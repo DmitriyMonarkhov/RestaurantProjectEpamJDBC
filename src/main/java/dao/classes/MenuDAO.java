@@ -1,7 +1,7 @@
-package DAO.Classes;
+package dao.classes;
 
-import DAO.Interface.Menu_Interface;
-import DataBase.DB;
+import dao.interfaces.MenuInterface;
+import dataBase.DB;
 import entity.Menu;
 
 
@@ -9,7 +9,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MenuDAO implements Menu_Interface {
+public class MenuDAO implements MenuInterface {
     DB db = new DB();
 
     public int create(Menu menu) {

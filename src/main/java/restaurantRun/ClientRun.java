@@ -1,8 +1,8 @@
-package RestaurantRun;
+package restaurantRun;
 
-import Service.ClientService;
-import Service.MenuService;
-import Service.OrderService;
+import service.ClientService;
+import service.MenuService;
+import service.OrderService;
 import entity.Client;
 import entity.Order;
 

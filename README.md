@@ -11,9 +11,9 @@
 7. Соблюдать Java Code Conventions.  
 
 **Стек, технологии:**   
-DataBase: MySQL  
+dataBase: MySQL  
 Local Server: MAMP  
-Administrator tool for DataBase:  phpMyAdmin  
+Administrator tool for dataBase:  phpMyAdmin  
 JDBC  
 Lombok
 

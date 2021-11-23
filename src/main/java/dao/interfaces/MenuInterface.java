@@ -1,10 +1,10 @@
-package DAO.Interface;
+package dao.interfaces;
 
 import entity.Menu;
 
 import java.util.List;
 
-public interface Menu_Interface extends CRUD_Interface<Menu> {
+public interface MenuInterface extends CRUDInterface<Menu> {
 
     List <Menu> getAllMenuItemsOrderByNameAsc();
     List <Menu> getAllMenuItemsOrderByNameDesc();

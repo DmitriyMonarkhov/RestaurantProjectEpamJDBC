@@ -1,10 +1,10 @@
-package DAO.Interface;
+package dao.interfaces;
 
 import entity.Client;
 
 import java.util.List;
 
-public interface Client_Interface extends CRUD_Interface<Client> {
+public interface ClientInterface extends CRUDInterface<Client> {
     List <Client> getAllbyNameAsc();
     List <Client> getAllbyNameDesc();
     Client getClientById(int x);
